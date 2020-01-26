@@ -7,12 +7,13 @@ class App extends React.Component {
     uthmani: '',
     surah: '',
     color: '',
-    ayahNumber: 1,
+    ayahNumber: 1
   }
 
   handleClick = () => {
-    this.setState({ayahNumber: this.state.ayahNumber + 1},
-      () => this.apiCall())
+    this.setState({ ayahNumber: this.state.ayahNumber + 1 }, () =>
+      this.apiCall()
+    )
   }
 
   componentDidMount = () => {
@@ -22,8 +23,10 @@ class App extends React.Component {
   apiCall = () => {
     let currentAyah = this.state.ayahNumber
     this.setState({
-      uthmani: ayahobject[currentAyah].uthmaniText + ' ' +
-      ayahobject[currentAyah].numberInSurahNativeReverse,
+      uthmani:
+        ayahobject[currentAyah].uthmaniText +
+        ' ' +
+        ayahobject[currentAyah].numberInSurahNativeReverse,
       surah: ayahobject[currentAyah].surah.name
     })
   }
@@ -44,20 +47,16 @@ class App extends React.Component {
 }
 
 const Quote = props => {
-
   return (
     <div id='quote-box'>
-      <p id='text'>
-        {props.text}
+      <p id='bismillah'>
+        {ayahobject[props.ayahNumber].numberInSurah === 1 &&
+         ayahobject[props.ayahNumber].surah.number > 1 &&
+          'بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ'}
       </p>
-      <p id='surah'>
-        {props.surah}
-      </p>
-      <button
-        id='button'
-        onClick={props.handleClick}
-        className='new-quote'
-      >
+      <p id='text'>{props.text}</p>
+      <p id='surah'>{props.surah}</p>
+      <button id='button' onClick={props.handleClick} className='new-quote'>
         آية تالية
       </button>
     </div>
@@ -65,4 +64,3 @@ const Quote = props => {
 }
 
 export default App
-
