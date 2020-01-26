@@ -1,6 +1,7 @@
 @font-face { font-family: KFGQPC HafsEx1 Uthmanic Script; src: url('./UthmanicHafs1Ex1Ver12.otf'); } 
 #quote-box{
   background-color : whitesmoke;
+  color:black;
   width: 400px;
   border-radius: 3px;
   margin: auto;
@@ -22,6 +23,7 @@
 }
 
 #surah {
+  color:black;
   text-align:end;
   font-family: 'Noto Naskh Arabic UI';
   padding-right: 20px;
@@ -46,6 +48,7 @@
   position: absolute;
   right:20px;
   bottom:20px;
+  background:#D8A05B;
   /* bottom: 0px; */
   /* margin-left:auto; */
   /* padding-bottom:0px; */
