@@ -1,5 +1,5 @@
 @font-face { font-family: KFGQPC HafsEx1 Uthmanic Script; src: url('./UthmanicHafs1Ex1Ver12.otf'); } 
-#quote-box{
+#container{
   background-color : whitesmoke;
   color:black;
   width: 400px;
@@ -12,15 +12,13 @@
   transform: translate(-50%, -50%);
 }
 
-#text {
-  color: #292929;
-  font-family: 'KFGQPC HafsEx1 Uthmanic Script';
-  direction: rtl;
-  font-size: 2em;
-  padding: 20px;
-  margin-bottom:0px;
-  margin-top: 0;
-  padding-bottom:20px;
+#surah {
+  color:black;
+  font-family: 'Noto Naskh Arabic UI';
+  direction:rtl;
+  position: relative;
+  top: 0px;
+  margin:0 0.5em;
 }
 
 #bismillah {
@@ -29,59 +27,25 @@
   font-size: 2em;
   text-align: center;
   margin-bottom: 0;
-
 }
 
-#surah {
-  color:black;
-  text-align:end;
-  font-family: 'Noto Naskh Arabic UI';
-  padding-right: 20px;
-  direction:rtl;
-  margin-top:-10px;
-  margin-left:20px;
-  margin-bottom: 40px;
-}
-
-#title {
-  text-align: center;
-  font-family: 'Noto Naskh Arabic UI';
+#text {
+  color: #292929;
+  font-family: 'KFGQPC HafsEx1 Uthmanic Script';
   direction: rtl;
-  display:none;
+  font-size: 2em;
+  padding: 20px;
+  margin-bottom:50px;
+  margin-top: 0;
+  padding-bottom:20px;
 }
 
-.new-quote {
+.next-button {
   border: 0px;
   border-radius: 3px;
   color:white;
-  /* display: block; */
   position: absolute;
   right:20px;
   bottom:20px;
   background:#D8A05B;
-  /* bottom: 0px; */
-  /* margin-left:auto; */
-  /* padding-bottom:0px; */
-  /* margin-right : 0px; */
-  /* margin-bottom : 30px; */
-}
-
-#loading {
-  font-size: 1.5em;
-  font-family : Noto Naskh Arabic;
-  text-align: center;
-}
-
-#twitterbox {
-  height: 35px;
-  width: 35px;
-  border-radius: 3px;
-  position: relative;
-  left: 20px;
-  bottom: 20px;
-  display: none;
-}
-
-img {
-  border-radius: 5px;
 }

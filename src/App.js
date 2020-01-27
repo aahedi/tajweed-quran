@@ -48,15 +48,13 @@ class App extends React.Component {
 
 const Quote = props => {
   return (
-    <div id='quote-box'>
-      <p id='bismillah'>
-        {ayahobject[props.ayahNumber].numberInSurah === 1 &&
-         ayahobject[props.ayahNumber].surah.number > 1 &&
-          'بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ'}
-      </p>
-      <p id='text'>{props.text}</p>
+    <div id='container'>
       <p id='surah'>{props.surah}</p>
-      <button id='button' onClick={props.handleClick} className='new-quote'>
+      {ayahobject[props.ayahNumber].numberInSurah === 1 &&
+       ayahobject[props.ayahNumber].surah.number > 1 &&
+      <p id='bismillah'>بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ</p>}
+      <p id='text'>{props.text}</p>
+      <button id='button' onClick={props.handleClick} className='next-button'>
         آية تالية
       </button>
     </div>
