@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/tajweed-quran/static/css/main.9833ea78.chunk.css",
+    "main.js": "/tajweed-quran/static/js/main.b2ae91e2.chunk.js",
+    "main.js.map": "/tajweed-quran/static/js/main.b2ae91e2.chunk.js.map",
+    "runtime-main.js": "/tajweed-quran/static/js/runtime-main.f38cb8ac.js",
+    "runtime-main.js.map": "/tajweed-quran/static/js/runtime-main.f38cb8ac.js.map",
+    "static/js/2.0e330de9.chunk.js": "/tajweed-quran/static/js/2.0e330de9.chunk.js",
+    "static/js/2.0e330de9.chunk.js.map": "/tajweed-quran/static/js/2.0e330de9.chunk.js.map",
+    "index.html": "/tajweed-quran/index.html",
+    "precache-manifest.ddb8f37bcfe3a51bad0f21f5b3bd0d25.js": "/tajweed-quran/precache-manifest.ddb8f37bcfe3a51bad0f21f5b3bd0d25.js",
+    "service-worker.js": "/tajweed-quran/service-worker.js",
+    "static/css/main.9833ea78.chunk.css.map": "/tajweed-quran/static/css/main.9833ea78.chunk.css.map",
+    "static/js/2.0e330de9.chunk.js.LICENSE": "/tajweed-quran/static/js/2.0e330de9.chunk.js.LICENSE",
+    "static/media/App.css": "/tajweed-quran/static/media/UthmanicHafs1Ex1Ver12.a1ffd466.otf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f38cb8ac.js",
+    "static/js/2.0e330de9.chunk.js",
+    "static/css/main.9833ea78.chunk.css",
+    "static/js/main.b2ae91e2.chunk.js"
+  ]
+}
