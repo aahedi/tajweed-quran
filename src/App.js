@@ -47,13 +47,32 @@ class App extends React.Component {
 }
 
 const Quote = props => {
+  let text = (
+    <p id='text'>
+      hel<span style={{ color: 'red' }}>l</span>o
+    </p>
+  )
+  let te = props.text
+    .split('')
+    .map(a => {
+      if (a === 'ٱ') {
+        return `<span style=color:red>${a}</span>`
+      } else {
+        return `<span>${a}</span>`
+      }
+    })
+    .join('')
+  console.log(te)
   return (
     <div id='container'>
       <p id='surah'>{props.surah}</p>
       {ayahobject[props.ayahNumber].numberInSurah === 1 &&
-       ayahobject[props.ayahNumber].surah.number > 1 &&
-      <p id='bismillah'>بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ</p>}
-      <p id='text'>{props.text}</p>
+        ayahobject[props.ayahNumber].surah.number > 1 && (
+          <p id='bismillah'>بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ</p>
+        )}
+      {/* <p id='text'>{props.text}</p> */}
+      <div id='text' dangerouslySetInnerHTML={{ __html: te }} />
+      {/* {te} */}
       <button id='button' onClick={props.handleClick} className='next-button'>
         آية تالية
       </button>
