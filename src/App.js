@@ -54,10 +54,18 @@ const Quote = props => {
   )
   let te = props.text
     .split('')
-    .map(a => {
-      if (a === 'ٱ') {
+    .map((a,i) => {
+      if (a=== 'ل' && props.text[i+2] === 'ّ') {
         return `<span style=color:red>${a}</span>`
-      } else {
+      } else if (a === 'م' && props.text[i+2] ==='\u0670') {
+        return `<span id=circle>${a}</span>`
+      } else if (a === 'ي') {
+        return `<span class=orange>${a}</span>`
+      } else if (a === 'ٱ' && props.text[i-1] !== ' '  /* Hamzatalwasl*/
+              && i > 0 && props.text[i+1]+props.text[i+2] !== 'لل'){
+        return `<span class=hamzawasl>${a}</span>`
+      }
+      else {
         return `<span>${a}</span>`
       }
     })
@@ -71,7 +79,7 @@ const Quote = props => {
           <p id='bismillah'>بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ</p>
         )}
       {/* <p id='text'>{props.text}</p> */}
-      <div id='text' dangerouslySetInnerHTML={{ __html: te }} />
+      <p id='text' dangerouslySetInnerHTML={{ __html: te }} />
       {/* {te} */}
       <button id='button' onClick={props.handleClick} className='next-button'>
         آية تالية

@@ -1,8 +1,21 @@
 @font-face { font-family: KFGQPC HafsEx1 Uthmanic Script; src: url('./UthmanicHafs1Ex1Ver12.otf'); } 
+body {
+  --darkred: #b00169ff;
+}
+/* Colors */
+/* darkred - #b00169ff */
+/* gray - #c7c8caff */
+/* camel - #c6920fff */
+/* orange - #f48221ff */
+/* darkblue - #006f9aff */
+/* lightblue - #00adefff */
+/* green - #00a652ff */
+/* red - #ec008eff */
+
 #container{
   background-color : whitesmoke;
-  color:black;
-  width: 400px;
+  color: black;
+  width: 800px;
   border-radius: 3px;
   margin: auto;
   position: absolute;
@@ -33,7 +46,7 @@
   color: #292929;
   font-family: 'KFGQPC HafsEx1 Uthmanic Script';
   direction: rtl;
-  font-size: 2em;
+  font-size: 4em;
   padding: 20px;
   margin-bottom:50px;
   margin-top: 0;
@@ -48,4 +61,25 @@
   right:20px;
   bottom:20px;
   background:#D8A05B;
+}
+
+
+
+/* TAJWEED RULES */
+#circle {
+  background: radial-gradient(at 52%, rgba(198,146,15,1) 16%, rgba(41,41,41,1) 15%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  /* background:red; */
+  /* font-size: 3em; */
+}
+
+
+.orange {
+  color: #f48221ff
+}
+
+.hamzawasl {
+  color: #c7c8caff
 }
