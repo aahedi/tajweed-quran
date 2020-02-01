@@ -71,8 +71,6 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  /* background:red; */
-  /* font-size: 3em; */
 }
 
 
@@ -82,4 +80,11 @@ body {
 
 .hamzawasl {
   color: #c7c8caff
+}
+
+.madd6 {
+  background: radial-gradient(at 52%, rgba(176,1,105,1) 76%, rgba(41,41,41,1) 15%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }

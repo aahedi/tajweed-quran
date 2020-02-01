@@ -16,6 +16,10 @@ class App extends React.Component {
     )
   }
 
+  // goto = (e) => {
+  //   this.setState ( {ayahNumber: e.event.value})
+  // }
+
   componentDidMount = () => {
     this.apiCall()
   }
@@ -47,22 +51,30 @@ class App extends React.Component {
 }
 
 const Quote = props => {
-  let text = (
-    <p id='text'>
-      hel<span style={{ color: 'red' }}>l</span>o
-    </p>
-  )
   let te = props.text
     .split('')
     .map((a,i) => {
-      if (a=== 'ل' && props.text[i+2] === 'ّ') {
-        return `<span style=color:red>${a}</span>`
-      } else if (a === 'م' && props.text[i+2] ==='\u0670') {
+      if(a === 'م' && props.text[i+2] ==='\u0670') {
         return `<span id=circle>${a}</span>`
-      } else if (a === 'ي') {
-        return `<span class=orange>${a}</span>`
-      } else if (a === 'ٱ' && props.text[i-1] !== ' '  /* Hamzatalwasl*/
-              && i > 0 && props.text[i+1]+props.text[i+2] !== 'لل'){
+        // (\u0621\u064e\u0627\u0653\S)|(\u0653.\u0651) for openoffice
+        /* Madd6 Muthakkal  98 occurances*/
+      } else if ((a === '\u0627' || a === '\u0648') 
+      && props.text[i+1] === '\u0653' 
+      && props.text[i+3] === '\u0651') {
+        return `<span class=madd6>${a}</span>`
+        /* Madd6 madalfarq 7 occurances */ 
+      } else if (a === 'ا' && props.text[i+1] === '\u0653' &&
+        props.text[i-2] === 'ء' && props.text[i - 1] === '\u064e') {
+        return `<span class=madd6>${a}</span>`
+      } else if ((a === 'ٱ' && props.text[i-1] !== ' '  /* Hamzatalwasl*/
+              && i > 0 && props.text[i+1]+props.text[i+2] !== 'لل') 
+              /* Hamzatalwasl sukun alif*/
+              || (a === '\u0627' && props.text[i+1] === '\u0652') 
+              /* Hamzatalwasl sukun sukun*/
+              || (a === '\u0652' && props.text[i-1] === '\u0627')
+              /* Laam qamar */
+              || (a === 'ل' && props.text[i-1] === 'ٱ' && props.text[i+2] === '\u0651' 
+              && props.text[i]+props.text[i+1] !== 'لل')) {
         return `<span class=hamzawasl>${a}</span>`
       }
       else {
@@ -70,17 +82,22 @@ const Quote = props => {
       }
     })
     .join('')
-  console.log(te)
   return (
     <div id='container'>
+ 
+      <div className="goto">
+        <input type="text" />
+        <button>go to</button>
+      </div>
+ 
       <p id='surah'>{props.surah}</p>
       {ayahobject[props.ayahNumber].numberInSurah === 1 &&
         ayahobject[props.ayahNumber].surah.number > 1 && (
           <p id='bismillah'>بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ</p>
         )}
-      {/* <p id='text'>{props.text}</p> */}
+
       <p id='text' dangerouslySetInnerHTML={{ __html: te }} />
-      {/* {te} */}
+ 
       <button id='button' onClick={props.handleClick} className='next-button'>
         آية تالية
       </button>
