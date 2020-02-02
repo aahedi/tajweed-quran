@@ -88,3 +88,22 @@ body {
   -webkit-background-clip: text;
   color: transparent;
 }
+.madd6-1 {
+  color:#b00169ff;
+}
+.madd6-2 {
+  background: radial-gradient(at 100%, rgba(176,1,105,1) 76%, rgba(41,41,41,1) 15%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.goto {
+  position: relative;
+  top: -40px;
+}
+
+.input {
+  width:50px;
+  margin: 0 1em;
+}
