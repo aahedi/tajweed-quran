@@ -14,18 +14,14 @@ class App extends React.Component {
   }
 
   handleClick = () => {
-    if (getAyah(1,10)){
-
       this.setState({ ayahNumber: Number(this.state.ayahNumber) + 1 }
       , () =>
       this.apiCallNext()
       )
-    }
   }
 
   goto = (e) => {
     e.preventDefault();
-    // let gotoNumber = e.target[0].value
     this.setState({ayahNumber: this.state.ayahNumber}, () => this.apiCall())
   }
 
